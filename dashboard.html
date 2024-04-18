@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+
+    <title>PCH - Dashboard </title>
+
+    <!-- shadow effect for navbar and section end  -->
+    <style>
+		
+		body {
+			background-color:#f2f3f4;
+		}
+		
+		.btn-primary{
+			background-color:#24628f;
+			border:solid #24628f;
+		}
+		
+		.btn-primary:hover{
+			background-color:#f36d38;
+			border:solid #f36d38;
+		}
+		
+		aside {
+			background-color:#f2f3f4;
+		}
+		
+		
+		
+        .navbar {
+            box-shadow: 0px 3px 3px -3px rgba(0, 0, 0, .5);
+        }
+
+        .muishadow {
+
+            box-shadow: 0px 3px 3px -3px rgba(0, 0, 0, .5);
+        }
+
+        .buttonhover:hover {
+
+            margin-left: 0px;
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+
+        }
+
+        .form-control:focus {
+            border-color: #D3D3D3;
+            box-shadow: 0 0 0 0.2rem #D3D3D3;
+        }
+
+        .nav-control:focus {
+            border-color: #D3D3D3;
+            box-shadow: 0 0 0 0.1rem #D3D3D3;
+        }
+
+        input[type="search"]::-webkit-search-cancel-button {
+            -webkit-appearance:none;
+        }
+		
+		#pchlogo {
+			padding-top:10px;
+			padding-bottom:10px;
+		}
+    </style>
+
+</head>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('.dropdown-toggle').dropdown();
+    });
+</script>
+<body>
+
+    
+	<!-- navbar  -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 ps-3 fixed-top">
+        <!-- navbar collapse for lg screen  -->
+        <div class="container">
+            <a href="#" class=" "> <img id = "pchlogo" class='d-none d-sm-block' src="img/pchlogo.png" style="width:200px; ">
+                <!-- icon for sm screen  -->
+                <img class='d-block d-sm-none' src="img/pchlogo.png" style="width:130px; "> <!-- icon for lg screen  -->
+            </a>
+
+
+            <div class=" d-flex justify-content-end ">
+              
+                <button class="navbar-toggler nav-control" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <!-- hamburger menu  -->
+                    <span class="navbar-toggler-icon"> </span>
+
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <!-- navigation tabs -->
+
+                <ul class="navbar-nav ms-auto">
+					
+					
+					<li class="nav-item">
+                        <a href="dashboard.html" class="nav-link"> <span class='textcolor'>Dashboard </span></a>
+                    </li>
+					
+                    <!-- Instructors Dropdown -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="instructorsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<span class='textcolor'> Instructors </span>
+						</a>
+						<ul class="dropdown-menu w-50" aria-labelledby="instructorsDropdown">
+							<li><a class="dropdown-item" href="addinstructors.html">Add Instructors</a></li>
+							<li><a class="dropdown-item" href="instructors.html">Manage Instructors</a></li>
+							
+							<!-- Add more dropdown items as needed -->
+						</ul>
+					</li>
+
+					<!-- Projects Dropdown -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<span class='textcolor'> Projects </span>
+						</a>
+						<ul class="dropdown-menu w-50" aria-labelledby="projectsDropdown">
+							<li><a class="dropdown-item" href="addprojects.html">Add Projects</a></li>
+							<li><a class="dropdown-item" href="projects.html">Manage Projects</a></li>
+							<!-- Add more dropdown items as needed -->
+						</ul>
+					</li>
+
+					<!-- Groups Dropdown -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="groupsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<span class='textcolor'> Groups </span>
+						</a>
+						<ul class="dropdown-menu w-50" aria-labelledby="groupsDropdown">
+							<li><a class="dropdown-item" href="addgroups.html">Add Group</a></li>
+							<li><a class="dropdown-item" href="groups.html">Manage Group</a></li>
+							<!-- Add more dropdown items as needed -->
+						</ul>
+					</li>
+
+					
+					
+					<!-- Students Dropdown -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="studentsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<span class='textcolor'> Students </span>
+						</a>
+						<ul class="dropdown-menu w-50" aria-labelledby="groupsDropdown">
+							<li><a class="dropdown-item" href="addstudents.html">Add Students</a></li>
+							<li><a class="dropdown-item" href="students.html">Manage Students</a></li>
+							<!-- Add more dropdown items as needed -->
+						</ul>
+					</li>
+					
+					  <li class="nav-item">
+                        <a href="notifications.html" class="nav-link"> <span class='textcolor'>Notification</span></a>
+                    </li>
+					
+					<li>
+					 <a href="index.html" class="btn btn-danger">Logout</a>
+                   </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+	
+   
+
+	<section class=" p5 text-center py-5" style= "margin-top:50px;">
+        <div class="container" >
+			<div class="row">
+				<aside class=" col-md-3">
+					
+					<!--
+					<div class="card text-center align-items-center ">
+						
+						<div class="card-body py-3">
+						
+							
+							<h5>Welcome, Admin !!!</h5>
+							 
+							<p>Here are some quick menu buttons which can be used to do basic tasks.</p>
+							<p><a href="addinstructors.html" class="btn btn-primary">Add Instructors</a></p>
+							<p><a href="addprojects.html" class="btn btn-primary">Add Projects</a> </p>
+							<p><a href="addgroups.html" class="btn btn-primary">Add Groups</a></p>
+							
+						</div>
+						
+						
+					</div>
+					
+					-->
+
+					<div class="card text-center align-items-center mb-3">
+						<span class="pt-1"> </span>
+						
+						<div class="card-body">
+							<p>Total Users</p>
+							<div class="row align-items-center">
+								<div class="">
+									<img src="img/ui.png" class="card-img-top img-fluid" alt="..." style="max-width: 50%;">
+								</div>
+								<div class="">
+									<p style="font-size: 20px;">423</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="card text-center align-items-center mb-3">
+						<span class="pt-1"> </span>
+						
+						<div class="card-body">
+							<p>Groups Created </p>
+							<div class="row align-items-center">
+								<div class="">
+									<img src="img/gi.png" class="card-img-top img-fluid" alt="..." style="max-width: 50%;">
+								</div>
+								<div class="">
+									<p style="font-size:20px;">98</p> 
+								</div>
+							</div>
+					
+						</div>
+					</div>
+
+					<div class="card text-center align-items-center mb-3">
+						<span class="pt-1"> </span>
+						
+						<div class="card-body">
+							<p>Ongoing Projects </p>
+							
+							<div class="row align-items-center">
+								<div class="">
+									<img src="img/pi.png" class="card-img-top img-fluid" alt="..." style="max-width: 50%;">
+								</div>
+								<div class="">
+									<p style="font-size:20px;">106</p>  
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</aside>
+
+				<div class="col-md-9">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="card text-center align-items-center mb-3">
+								<span class="pt-3"></span>
+								<h6> Student Distribution</h6>
+								<div id="donutchart" style="margin-top:-40px; position:center; width: 100%; height: 300px;"></div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="card text-center align-items-center mb-3">
+								<span class="pt-3"></span>
+								<h6> Risk Indicator </h6>
+								<div id="donutchart2" style="margin-top:-40px; position:center; width: 100%; height: 300px;"></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Second row: 1 -->
+					<div class="row pt-3">
+						<div class="col-md-12">
+							<div class="card text-center align-items-center mb-3">
+								<span class="pt-3"></span>
+								<h6> Active Users, Users Activity</h6>
+								<div id="columnchart_values" style="margin-top:-40px; position:center; width: 120%; height: 400px;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Google Charts -->
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script>
+		// Get the canvas element
+		var ctx = document.getElementById('individualPieChart').getContext('2d');
+
+		// Define data for the pie chart
+		var data = {
+			labels: ['Red', 'Blue', 'Yellow'],
+			datasets: [{
+				data: [30, 20, 50],
+				backgroundColor: ['red', 'blue', 'yellow']
+			}]
+		};
+
+		// Initialize the pie chart
+		var individualPieChart = new Chart(ctx, {
+			type: 'pie',
+			data: data
+		});
+	</script>
+
+	<!-- Google Charts scripts for other charts -->
+	<!-- Include your other Google Charts scripts here -->
+
+	<script type="text/javascript">
+		google.charts.load("current", {packages:["corechart"]});
+		google.charts.setOnLoadCallback(drawChart);
+		function drawChart() {
+			var data = google.visualization.arrayToDataTable([
+				['Task', 'Hours per Day'],
+				['Student in Groups', 11],
+				['Students not in Groups', 2],
+				['Groups working on Projects', 7]
+			]);
+
+			var options = {
+				
+				
+				pieHole: 0.2,
+				backgroundColor: 'transparent', // Set background color to transparent
+				legend: { position: 'bottom',alignment: 'center' } // Center align legend
+			};
+
+			var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+			chart.draw(data, options);
+		}
+	</script>
+
+	<script type="text/javascript">
+		google.charts.setOnLoadCallback(drawChart2);
+		function drawChart2() {
+			var data2 = google.visualization.arrayToDataTable([
+				['Risk', 'Percentage'],
+				['At Risk', 20],
+				['Not At Risk', 80]
+			]);
+
+			var options2 = {
+				pieHole: 0.2,
+				backgroundColor: 'transparent',
+				slices: {
+					0: { color: 'red' },
+					1: { color: 'green' }
+				},
+				legend: { position: 'bottom', alignment: 'center' } // Center-align legend
+			};
+
+			var chart2 = new google.visualization.PieChart(document.getElementById('donutchart2'));
+			chart2.draw(data2, options2);
+		}
+	</script>
+
+	<script type="text/javascript">
+		google.charts.setOnLoadCallback(drawChart);
+		function drawChart() {
+			var data = google.visualization.arrayToDataTable([
+				['Week', 'Value'],
+				['Week 1', 20],
+				['Week 2', 30],
+				['Week 3', 40],
+				['Week 4', 50],
+				['Week 5', 60],
+				['Week 6', 70],
+				['Week 7', 80],
+				['Week 8', 90],
+				['Week 9', 95],
+				['Week 10', 80],
+				['Week 11', 70],
+				['Week 12', 60]
+			]);
+
+			var options = {
+				title: "",
+				backgroundColor: 'transparent',
+				width: '100%',
+				height: 400,
+				hAxis: {
+					title: 'Active users VS Weeks',
+					textStyle: {fontSize: 12}
+				},
+				vAxis: {
+					title: '',
+					minValue: 1,
+					maxValue: 100
+				},
+				legend: { position: "none" }
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+			chart.draw(data, options);
+		}
+	</script>
+
+
+
+        <!-- Footer -->
+        <footer class="text-center text-xl-center bg-light text-muted">
+            <!-- Copyright -->
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2024 Copyright:
+                <a class="text-reset fw-bold" href="#">www.projectcollabhub.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+
+
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

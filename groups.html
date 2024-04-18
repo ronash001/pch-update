@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+
+    <title>PCH - Groups </title>
+
+    <!-- shadow effect for navbar and section end  -->
+    <style>
+        .navbar {
+            box-shadow: 0px 3px 3px -3px rgba(0, 0, 0, .5);
+        }
+
+        .muishadow {
+
+            box-shadow: 0px 3px 3px -3px rgba(0, 0, 0, .5);
+        }
+
+        .buttonhover:hover {
+
+            margin-left: 0px;
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+
+        }
+
+        .form-control:focus {
+            border-color: #D3D3D3;
+            box-shadow: 0 0 0 0.2rem #D3D3D3;
+        }
+
+        .nav-control:focus {
+            border-color: #D3D3D3;
+            box-shadow: 0 0 0 0.1rem #D3D3D3;
+        }
+
+        input[type="search"]::-webkit-search-cancel-button {
+            -webkit-appearance:none;
+        }
+		
+		#pchlogo {
+			padding-top:10px;
+			padding-bottom:10px;
+		}
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- navbar  -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 ps-3 fixed-top">
+        <!-- navbar collapse for lg screen  -->
+        <div class="container">
+            <a href="#" class=" "> <img id = "pchlogo" class='d-none d-sm-block' src="img/pchlogo.png" style="width:200px; ">
+                <!-- icon for sm screen  -->
+                <img class='d-block d-sm-none' src="img/pchlogo.png" style="width:130px; "> <!-- icon for lg screen  -->
+            </a>
+
+
+            <div class=" d-flex justify-content-end ">
+              
+                <button class="navbar-toggler nav-control" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navmenu">
+                    <!-- hamburger menu  -->
+                    <span class="navbar-toggler-icon"> </span>
+
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <!-- navigation tabs -->
+
+
+
+                <ul class="navbar-nav ms-auto">
+					
+					
+					<li class="nav-item">
+                        <a href="dashboard.html" class="nav-link"> <span class='textcolor'>Dashboard </span></a>
+                    </li>
+                    <!-- Instructors Dropdown -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="instructorsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<span class='textcolor'> Instructors </span>
+						</a>
+						<ul class="dropdown-menu w-50" aria-labelledby="instructorsDropdown">
+							<li><a class="dropdown-item" href="addinstructors.html">Add Instructors</a></li>
+							<li><a class="dropdown-item" href="instructors.html">Manage Instructors</a></li>
+							
+							<!-- Add more dropdown items as needed -->
+						</ul>
+					</li>
+
+					<!-- Projects Dropdown -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<span class='textcolor'> Projects </span>
+						</a>
+						<ul class="dropdown-menu w-50" aria-labelledby="projectsDropdown">
+							<li><a class="dropdown-item" href="addprojects.html">Add Projects</a></li>
+							<li><a class="dropdown-item" href="projects.html">Manage Projects</a></li>
+							<!-- Add more dropdown items as needed -->
+						</ul>
+					</li>
+
+					<!-- Groups Dropdown -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="groupsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<span class='textcolor'> Groups </span>
+						</a>
+						<ul class="dropdown-menu w-50" aria-labelledby="groupsDropdown">
+							<li><a class="dropdown-item" href="addgroups.html">Add Group</a></li>
+							<li><a class="dropdown-item" href="groups.html">Manage Group</a></li>
+							<!-- Add more dropdown items as needed -->
+						</ul>
+					</li>
+					
+					<!-- Students Dropdown -->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="studentsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							<span class='textcolor'> Students </span>
+						</a>
+						<ul class="dropdown-menu w-50" aria-labelledby="groupsDropdown">
+							<li><a class="dropdown-item" href="addstudents.html">Add Students</a></li>
+							<li><a class="dropdown-item" href="students.html">Manage Students</a></li>
+							<!-- Add more dropdown items as needed -->
+						</ul>
+					</li>
+					
+					  <li class="nav-item">
+                        <a href="notifications.html" class="nav-link"> <span class='textcolor'>Notification</span></a>
+                    </li>
+					
+					<li>
+					 <a href="index.html" class="btn btn-danger">Logout</a>
+                   </li>
+                </ul>
+
+
+            </div>
+
+        </div>
+
+    </nav>
+   
+
+   <section class=" p5 text-center py-5" style= "margin-top:50px;">
+		<div class="container" >
+			<div class="card text-center">
+				<div class="card-body">
+					<form class="d-flex justify-content-center align-items-center">
+						<input class="form-control me-2 flex-grow-1" type="search" placeholder="Search for Groups" aria-label="Search">
+						<button type="button" class="btn btn-secondary">Search</button>
+					</form>
+					<div class="table-responsive mt-3">
+						<table class="table table-striped">
+							<thead>
+								<tr>
+									<th style="width: 5%;">SN</th>
+									<th style="width: 20%;">Group Name</th>
+									<th style="width: 30%;">Projects Name</th>
+									<th style="width: 20%;">Instructors</th>
+									<th style="width: 8%;">Members</th>
+									<th style="width: 8%;">Edit</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td><a href="groupinfo.html">Group 1</a></td>
+									<td>Intelligent Home Automation System</td>
+									<td> <a href="studentinfo.html">Dr Graeme Salter</a></td>
+									<td> 5</td>
+									<td><button class="btn btn-primary">Edit</button></td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td><a href="groupinfo.html">Group 2</a></td>
+									<td>Smart Traffic Management System</td>
+									<td><a href="studentinfo.html">Dr Ali Braytee</a></td>
+									<td> 5</td>
+									<td><button class="btn btn-primary">Edit</button></td>
+								</tr>
+								
+								<!-- Add more rows if needed -->
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+        <!-- Footer -->
+        <footer class="text-center text-xl-center bg-light text-muted">
+            <!-- Copyright -->
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2024 Copyright:
+                <a class="text-reset fw-bold" href="#">www.projectcollabhub.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+
+
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

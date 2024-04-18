@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		
+	
+
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+	
+
+
+
+    <title>Project Collab Hub</title>
+
+    <!-- shadow effect for navbar and section end  -->
+    <style>
+        .navbar {
+            box-shadow: 0px 3px 3px -3px rgba(0, 0, 0, .5);
+        }
+
+        .muishadow {
+
+            box-shadow: 0px 3px 3px -3px rgba(0, 0, 0, .5);
+        }
+
+        .buttonhover:hover {
+
+            margin-left: 0px;
+            -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+
+        }
+
+        .form-control:focus {
+            border-color: #D3D3D3;
+            box-shadow: 0 0 0 0.2rem #D3D3D3;
+        }
+
+        .nav-control:focus {
+            border-color: #D3D3D3;
+            box-shadow: 0 0 0 0.1rem #D3D3D3;
+        }
+
+        input[type="search"]::-webkit-search-cancel-button {
+            -webkit-appearance:none;
+        }
+		
+		#pchlogo {
+			padding-top:10px;
+			padding-bottom:10px;
+		}
+	
+		.registration-container,
+		.login-container {
+		width:65%;
+		 border: 1px solid #ccc;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 20px;
+        display: none;
+        z-index: 9999; /* Set a higher z-index to bring it in front */
+		}
+
+		.login-content {
+		background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+		}
+
+		.form-box {
+        background-color: white;
+        padding: 20px;
+       
+        margin: 0 10px;
+        flex: 1; /* Allow both login and register boxes to grow to the same height */
+        width: 300px; /* Set width for both boxes */
+		}
+
+		.form-box input,
+		.form-box button {
+        display: block;
+        margin-bottom: 10px;
+        width: 100%; /* Make inputs and buttons fill the width of the form */
+		}
+
+		.form-box label {
+        display:flex;
+        margin-bottom: 5px;
+		}
+
+  
+		.close-btn {
+         position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10 px;
+        background-color: #ccc;
+        color: #333;
+        border: none;
+        border-radius: 5 5 5 5s;
+        cursor: pointer;
+		}
+
+		.login-image {
+        margin-right: 20px;
+		width:50%;
+		}
+	
+		.checkbox-container {
+		display: flex;
+		align-items: left;
+		margin-bottom: 10px;
+		}
+
+		.checkbox-container input[type="checkbox"] {
+		margin-right: -0270px;
+		}
+
+   </style>
+
+</head>
+
+	<!-- JS for Pooper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous">
+	</script>
+
+<body>
+
+<!-- Login / registration -->
+
+	<div class="login-container" id="loginContainer">
+		<button class="close-btn" onclick="closeLogin()">X</button>
+			<div class="login-content">
+				<img src="img/pc.png" alt="PC Image" class="login-image d-none d-lg-block">
+				
+				<!-- Login form box -->
+				<div class="form-box">
+					<h2>Login</h2>
+						<form>
+							<label for="loginEmail">Student ID:</label>
+							<input type="email" id="loginEmail" name="loginEmail" placeholder="Enter your Student ID">
+					
+							<label for="loginPassword">Password:</label>
+							<input type="password" id="loginPassword" name="loginPassword" placeholder="Enter your Password">
+							<br/>
+							<button type="submit" class="btn btn-primary" style="width:50%" onclick="openDashboard();"> Login</button>
+							<p> Don't have account? <a href="#!" onclick="closeLogin(); openRegistration()" > Register Here </a> </p>
+						</form>
+				</div>
+			</div>
+	</div>
+
+
+	<div class="registration-container" id="registrationContainer">
+		<button class="close-btn" onclick="closeRegistration()">X</button>
+			<div class="login-content">
+				<img src="img/pr.png" alt="PC Image" class="login-image d-none d-lg-block">
+				
+				
+					<!-- Registration form box -->
+					<div class="form-box">
+						<h2>Register</h2>
+						<form>
+							<label for="firstName">Full Name:</label>
+							<input type="text" id="fullName" name="fullName" placeholder="Full Name">
+
+							<label for="email">Email:</label>
+							<input type="email" id="email" name="email" placeholder="Email">
+
+							<label for="studentId">Student ID:</label>
+							<input type="text" id="studentId" name="studentId" placeholder="Student ID">
+
+							<label for="password">Password:</label>
+							<input type="password" id="password" name="password" placeholder="Password">
+
+							<input class="form-check-input" type="checkbox" id="acceptTerms" name="acceptTerms" style="width:16px; height:16px; display:inline;">
+							<label class="form-check-label" for="acceptTerms" style="display:inline;">I accept the terms & conditions.</label>
+
+							<button type="submit" class="btn btn-primary" style="width:50%;">Register</button>
+							<p> Already Registered? <a href="#!" onclick="closeRegistration(); openLogin()" > Login Here </a> </p>
+						</form>
+					</div>
+			</div>
+	</div>
+
+	<script>
+		function openLogin() {
+			document.getElementById("loginContainer").style.display = "block";
+		}
+
+		function closeLogin() {
+			document.getElementById("loginContainer").style.display = "none";
+		}
+		 function openRegistration() {
+			closeLogin();
+			document.getElementById("registrationContainer").style.display = "block";
+		}
+
+		function closeRegistration() {
+			document.getElementById("registrationContainer").style.display = "none";
+		}
+		 function openDashboard() {
+			 window.open('dashboard.html', '_blank');
+		}
+	</script>
+
+
+    <!-- navbar  -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 ps-3 fixed-top">
+        <!-- navbar collapse for lg screen  -->
+        <div class="container">
+            <a href="#" class=" "> <img id = "pchlogo" class='d-none d-sm-block' src="img/pchlogo.png" style="width:200px; ">
+                <!-- icon for sm screen  -->
+                <img class='d-block d-sm-none' src="img/pchlogo.png" style="width:130px; "> <!-- icon for lg screen  -->
+            </a>
+
+
+            <div class=" d-flex justify-content-end ">
+              
+                <button class="navbar-toggler nav-control" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <!-- hamburger menu  -->
+                    <span class="navbar-toggler-icon"> </span>
+
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navmenu">
+                <!-- navigation tabs -->
+
+                <ul class="navbar-nav ms-auto">
+					
+					
+					<li class="nav-item">
+                        <a href="index.html" class="nav-link"> <span class='textcolor'>Home </span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="aboutus.html" class="nav-link"> <span class='textcolor'> About us </span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="resources.html" class="nav-link"> <span class='textcolor'>Resources</span></a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a href="contacts.html" class="nav-link"> <span class='textcolor'>Contacts</span></a>
+                    </li>
+					<li>
+
+					 <a href="#" class="btn btn-primary" onclick="openLogin()">Get Started</a>
+                   </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+	
+	
+	
+    <!--Resources Page-->
+	<!--Resources Page-->
+	<section class="p-5 text-center text-lg-start" style="margin-top:70px;">
+		<div class="container">
+
+			<h2 class="pb-5">
+				Want help with your project?
+			</h2>
+
+			<div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+				<!-- First row: 4 items -->
+				<div class="col">
+					<div class="card pt-2">
+						<img src="img/pdf.jpg" class="card-img-top" alt="...">
+						<div class="card-body text-center">
+							<h6 class="card-title">Individual Cover Page</h6>
+							<a href="#!" class="btn btn-primary">Download</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card  pt-2">
+						<img src="img/pdf.jpg" class="card-img-top" alt="...">
+						<div class="card-body text-center">
+							<h6 class="card-title">Group Cover Page</h6>
+							<a href="#!" class="btn btn-primary">Download</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card  pt-2">
+						<img src="img/pdf.jpg" class="card-img-top" alt="...">
+						<div class="card-body text-center">
+							<h6 class="card-title">Proposal Sample</h6>
+							<a href="#!" class="btn btn-primary">Download</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card  pt-2">
+						<img src="img/pdf.jpg" class="card-img-top" alt="...">
+						<div class="card-body text-center">
+							<h6 class="card-title">Report Sample</h6>
+							<a href="#!" class="btn btn-primary">Download</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Second row: 4 items -->
+				<div class="col">
+					<div class="card  pt-2">
+						<img src="img/pl.jpg" class="card-img-top" alt="...">
+						<div class="card-body text-center">
+							<h6 class="card-title">Projects List</h6>
+							<a href="#!" class="btn btn-primary">Download</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card  pt-2">
+						<img src="img/gl.jpg" class="card-img-top" alt="...">
+						<div class="card-body text-center">
+							<h6 class="card-title">Groups List</h6>
+							<a href="#!" class="btn btn-primary">Download</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card  pt-2">
+						<img src="img/gc.jpg" class="card-img-top" alt="...">
+						<div class="card-body text-center">
+							<h6 class="card-title">Ganttchart Sample</h6>
+							<a href="#!" class="btn btn-primary">Download</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card  pt-2">
+						<img src="img/tl.jpg" class="card-img-top" alt="...">
+						<div class="card-body text-center">
+							<h6 class="card-title">Timeline Sample</h6>
+							<a href="#!" class="btn btn-primary">Download</a>
+						</div>
+					</div>
+				</div>
+
+			</div> <!-- .row -->
+
+		</div> <!-- .container -->
+	</section>
+
+
+
+
+
+    <div class="muishadow ">
+        <!-- Footer -->
+        <footer class="text-center text-xl-center bg-light text-muted">
+            <!-- Copyright -->
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2024 Copyright:
+                <a class="text-reset fw-bold" href="#">www.projectcollabhub.com</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+	</div>
+</body>
+
+</html>
